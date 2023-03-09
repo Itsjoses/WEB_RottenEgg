@@ -1,0 +1,211 @@
+
+.SignIn{
+    width: 100vw;
+    min-height: 100vh;
+    line-height: 1.36;
+    color: #222;
+    font-family: Helvetica,Arial,sans-serif;
+    background-color: #f4f5f7;
+}
+.SignIn-Header{
+    display: flex;
+    justify-content: center;
+    padding: 25px;
+    img{
+        width: 130px;
+        height: auto;
+    }
+}
+
+.SignIn-Body{
+    display: flex;
+    justify-content: center;
+    .SignIn-Box{
+        position: relative;
+        box-sizing: border-box;
+        margin: 0 auto;
+        padding: 0 20px;
+        width: 320px;
+        min-height: 300px;
+    }
+
+    .SignIn-Title{
+        text-align: center;
+        margin: 0 0 15px;
+    }
+
+    .SignUp-note{
+        color: #606060;
+        font-size: 13px;
+        a{
+            color: #cc4e00;
+        }
+    }
+
+    .SignIn-Form{
+        line-height: 1.36;
+    }
+
+    .SignIn-Email {
+        position: relative;
+        width: 100%;
+
+        label{
+            position: absolute;
+            box-sizing: border-box;
+            left: 0;
+            top: 0;
+            padding: 12px 15px;
+            height: 44px;
+            transition: .2s;
+            color: grey;
+        }
+        input{
+            border: 1px solid #d9d9d9;
+            border-radius: 3px;
+            box-sizing: border-box;
+            font-size: 13px;
+            height: 44px;
+            padding: 12px 15px;
+            width: 100%;
+        }
+        
+    }
+}
+
+.form{
+    margin-top: 13px;
+}
+
+.SignInButton{
+    width: 100%;
+    height: 44px;
+    border: 1px solid #d60;
+    background-color: #f39834;
+    border-radius: 3px;
+}
+
+.SignInOneTime{
+    width: 100%;
+    height: 44px;
+    border-radius: 3px;
+    border: 1px solid #d9d9d9;
+    background-color: rgb(252, 252, 253);
+}
+
+.form-checkbox{
+    box-sizing: border-box;
+    cursor: pointer;
+    display: inline-block;
+    letter-spacing: normal;
+    padding: 6px 0 6px 28px;
+    position: relative;
+    vertical-align: middle;
+    width: 100%;
+
+    input[type ="checkbox"]{
+        left: 0;
+        opacity: 1;
+        position: absolute;
+        z-index: 1;
+        top: 8.9px;
+    }
+
+    .form-checkbox-menu{
+        display: block;
+        min-height: 16px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: 14px;
+    }
+}
+
+.note{
+    width: 100%;
+    font-size: 13px;
+    margin-top: 13px;
+    a{
+        
+        color: #606060;
+    }
+}
+
+.SignUp{
+    font-size: 15px;
+    text-align: center;
+    a{
+        
+        color: black;
+    }
+}
+
+.split-line::before{
+    content: "";
+    background: #ebebeb;
+    position: absolute;
+    overflow: hidden;
+    height: 1px;
+    left: 0;
+    right: 0;
+    top: 50%;
+    width: 100%;
+}
+
+.split-line{
+    margin: 30px 0 15px;
+    position: relative;
+    text-align: center;
+    
+
+    span{
+        background: #f4f5f7;
+        color: #606060;
+        font-size: 13px;
+        padding: 0 20px;
+        z-index: 100;
+        position: relative;
+    }
+}
+
+.SignInGoogle{
+    width: 100%;
+    height: 44px;
+    border-radius: 3px;
+    border: 1px solid #d9d9d9;
+    background-color: rgb(252, 252, 253);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 1em;
+    position: relative;
+    .image{
+        position: absolute;
+        display: flex;
+        align-items: center;
+        left: 20px;
+    }
+    img{
+        width: 20px;
+        height: 20px;
+
+    }
+}
+
+.SignIn-Footer{
+    // position: absolute;
+    margin-top: 10vh;
+    bottom: 0;
+    width: 100vw;
+    text-align: center;
+    a,p{
+        color: #606060;
+        font-size: 12px;
+        margin: 10px 0;
+    }
+}
+
+.error-messages{
+    font-size: 0.7rem;
+    color: red;
+    text-align: end;
+}

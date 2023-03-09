@@ -1,0 +1,18 @@
+type TransactionHeader{
+    id: ID!
+    User: User!
+    Status: String!
+ 
+    TransactionDetail: [TransactionDetail!]
+}
+
+extend type Query{
+    TransactionHeaderDone(user_id: String!): TransactionHeader!
+    TransactionHeaderPending(user_id: String!): TransactionHeader!
+    TransactionHeaderCancle(user_id: String!): TransactionHeader!
+}
+
+extend type Mutation{
+    CreateNewHeader(user_id: String!): TransactionHeader!
+}
+

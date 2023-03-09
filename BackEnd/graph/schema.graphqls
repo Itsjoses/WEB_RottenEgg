@@ -1,0 +1,116 @@
+# GraphQL schema example
+#
+# https://gqlgen.com/getting-started/
+
+type User {
+  id: ID!
+  first_name: String!
+  last_name: String!
+  email: String!
+  password: String!
+  phone_number: String!
+  banned: String!
+  Followed: [Followed!]
+}
+
+type Voucher{
+  id: ID!
+  VoucherName: String!
+  VoucherDecPrice: Int!
+}
+
+type Product{
+  id: ID!
+  ProductName: String!
+  ProductCategory: Category!
+  ProductImage: String!
+  ProductDescription: String!
+  ProductPrice: Int!
+  ProductStock: Int!
+  WishListDetail: [WishListDetail!]!
+  Shop: Shop
+}
+
+type Category{
+  id: ID!
+  CategoryName: String!  
+}
+
+type WishList{
+  id: ID!
+  Name: String!
+  Privacy: String!
+  User: User!
+  WishListDetails: [WishListDetail!]
+  Followed: [Followed]!
+}
+
+type Query {
+  users: [User!]!
+  Product: [Product!]!
+  Category: [Category]!
+  WishList(id: String!): [WishList!]!
+  Shop(id: String!): Shop!
+
+  Login(email: String!,password: String!): User!
+  GetUser(id: String!): User!
+  GetShop: [Shop!]!
+  GetProduct(page: Int!): [Product!]!
+  ProductDetail(id: String!): Product!
+}
+
+
+# input
+
+input NewUser{
+  first_name: String!
+  last_name: String!
+  email: String!
+  password: String!
+  phone_number: String!
+}
+
+input NewVoucher{
+  VoucherName: String!
+  VoucherDecPrice: Int!
+}
+
+input NewShop{
+  ShopName: String!
+  ShopEmail: String!
+  ShopPassword: String! 
+}
+
+input NewProduct{
+  ProductName: String!
+  ProductCategoryName: String!
+  ProductImage: String!
+  ProductDescription: String!
+  ProductPrice: Int!
+  ProductStock: Int!
+}
+
+
+type Mutation {
+  createUser(input: NewUser!): User!
+  CreateVoucher(input: NewVoucher!): Voucher!
+  CreateShop(input: NewShop!): Shop!
+
+  CreateCategory(CategoryName: String!): Category!
+  CreateProduct(input: NewProduct!): Product!
+
+  CreateWishList(name: String!,Privacy: String!,UserEmail: String!): WishList!
+  UpdateWishList(id: String!, name: String!, Privacy: String!): WishList!
+
+
+  searchUser: User!
+  login(email: String!,password:String!): User!
+  updatePhone(email: String!,phone_number: String!): User!
+  updatePassword(email: String!,currentpassword: String!,newpassword: String!): User!
+  changeBanned(banned: String!,email: String!): User!
+  sendNewsLetter(subject: String!,content: String!): [User]!
+  bannedShop(banned: String!,email: String!): Shop!
+
+  updateBanner(banner: String!,id: String!): Shop!
+
+} 

@@ -1,0 +1,272 @@
+.Checkout-Container{
+    width: 100vw;
+    .Checkout-Content{
+        width: 95%;
+        margin:  0 auto;
+        .Checkout-Content-Left{
+            width: 70%;
+            padding: 1rem;
+        }
+        .Checkout-Content-Right{
+            width: 30%;
+
+        }
+    }
+}
+
+.Checkout-Content{
+    display: flex;
+    
+}
+
+.Checkout-Content-Left{
+    background-color: red;
+}
+
+.Checkout-Content-Left-Top{
+    margin: .8rem 0;
+}
+
+.Checkout-Content-Left-Bottom-Top{
+    width: 93%;
+    margin: 0 auto;
+    background-color: gray;
+    padding: 1rem;
+}
+
+.Checkout-Content-Left-Bottom-Top-Bottom{
+    width: 40%;
+    background-color: yellow;
+    display: flex;
+    padding: .8rem;
+    justify-content: space-between;
+    margin: .3rem 0;
+    .Bottom-Top-Bottom-Right{
+        display: flex;
+        align-items: center;
+        i{
+            font-size: 1.5rem;
+        }
+    }
+}
+
+.Checkout-Content-Left-Bottom-Bottom{
+    width: 90%;
+    background-color: yellow;
+    margin: 1rem auto;
+    p{
+        font-size: .9rem;
+    }
+}
+
+.Left-Bottom-mid{
+    button{
+        background-color: white;
+        outline: none;
+        border: 1px solid grey;
+        padding: .3rem;
+        font-weight: bold;
+        margin: 1rem 0;
+    }
+}
+
+.Left-Bottom-Bottom{
+    display: flex;
+    background-color: yellow;
+    padding: .3rem;
+    border: 1px solid grey;
+    border-radius: .4rem;
+    margin-bottom: 1rem;
+}
+
+.Left-Bottom-Bottom-Right-Button{
+    display: flex;
+}
+
+.Left-Bottom-Bottom-Container{
+    width: 100%;
+    background-color: red;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    column-gap: 2%;
+}
+
+.Left-Bottom-Bottom-Left{
+    width: 10%;
+    display: flex;
+    align-items: start;
+    .Radio-input{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+}
+.Left-Bottom-Bottom-Right{
+    width: 90%;
+    background-color: blue;
+}
+
+.Left-Bottom-Bottom-Right-Button{
+    display: flex;
+    justify-content: space-between;
+}
+
+.Left-Bottom-Right-Left{
+    button{
+        font-size: .6rem;
+    }
+}
+
+.Left-Bottom-Right-Right{
+    button{
+        font-size: .6rem;
+        margin: 0 .3rem;
+    }
+}
+
+.Left-Bottom-Button{
+    width: 100%;
+    background-color: blue;
+    display: flex;
+    justify-content: end;
+    button{
+        width: 30%;
+        padding: .2rem 0;
+    }
+}
+
+//=======
+.ProductCart-Content-Right-Content{
+    margin: 0 auto;
+}
+.ProductCart-Content-Right-Content{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0;
+    
+}
+
+.Content-Right-Top{
+    font-size: 2rem;
+}
+
+.Content-Right-Mid{
+    padding: 1rem 0;
+    border-bottom: 1px solid grey;
+}
+
+.Content-Right-Button-Top{
+    display: flex;
+    justify-content: space-between;
+}
+
+.Content-Right-Button{
+    padding: 1rem 0;
+    .Content-Right-Button-Bottom{
+        margin: 1rem 0;
+        button{
+            width: 100%;
+
+        }
+    }
+}
+
+.ProductCart-Content-Left-Card{
+    display: flex;
+}
+.Button-Delete-Top{
+
+}
+
+.Button-Delete-Bottom{
+    display: flex;
+    align-items: center;
+    
+    button{
+        margin: 1rem auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 3rem;
+        height: 2rem;
+    }
+    i{
+        display: block;
+    }
+}
+
+
+//modal
+.modal-container{
+    position: fixed;
+    width: 30rem;
+    height: 20rem;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    background-color: white;
+    border-radius: 20px;
+    z-index: 100;
+    padding: 2rem 0;
+}
+
+.modal-container-half{
+    width: 80%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.middle-top{
+    margin-top: 1rem;
+    input{
+        width: 100%;
+        height: 1.8rem;
+    }
+    select{
+        width: 100%;
+        background-color: white;
+        border: 1px solid black;
+        padding: .3rem;
+        border-radius: 20px;
+    }
+}
+
+.middle{
+    margin-top: 1rem;
+    button{
+        width: 5rem;
+        height: 2rem;
+        outline: none;
+        border: none;
+        margin-right: 1rem;
+    }
+}
+
+.bottom{
+    height: 3rem;
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    border-top: 1px solid grey;
+    margin-top: 2rem;
+    button{
+        width: 5rem;
+        height: 2rem;
+        background-color: orange;
+        outline: none;
+        border: 1px solid grey;
+    }
+}
+
+.Close{
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 1.5em;
+    button{
+        border: none;
+        outline: none;
+        background-color: white;
+    }
+}   

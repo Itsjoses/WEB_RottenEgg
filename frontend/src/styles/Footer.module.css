@@ -1,0 +1,110 @@
+.footercontainer {
+  width: 100vw;
+  position: relative;
+  color: white;
+}
+.footercontainer a {
+  color: white;
+  font-size: 14px;
+}
+
+.footerupper {
+  width: 100vw;
+  padding: 30px 0;
+}
+
+.footerupper-content {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1800px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: #F6F8FE;
+  color: black;
+}
+.footerupper-content a {
+  color: black;
+}
+
+.footerupper-content-left {
+  padding: 20px;
+  width: 50%;
+  height: 250px;
+  background-color: red;
+}
+.footerupper-content-left .section-middle-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.footerupper-content-left .section-Title-text {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.section-middle .section-middle-text {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.section-middle-form {
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+.section-middle-form .section-middle-form-left {
+  width: 300px;
+  padding: 8px 12px;
+  border: 1px solid grey;
+  background-color: blue;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.section-middle-form .section-middle-form-left i {
+  font-size: 20px;
+  margin-right: 10px;
+}
+.section-middle-form .section-middle-form-left input {
+  width: 100%;
+}
+
+.section-Title {
+  margin-bottom: 40px;
+}
+
+.footermiddle {
+  padding: 40px 0;
+  max-width: 1800px;
+  min-height: 50vh;
+  /* background-color: red; */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  margin: 0 auto;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.footer-Content {
+  width: calc(20% - 20px);
+}
+
+.footer-Title {
+  display: block;
+  margin-bottom: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.footer-Detail a {
+  text-decoration: none;
+}
+.footer-Detail li {
+  list-style: none;
+  margin-top: 10px;
+}

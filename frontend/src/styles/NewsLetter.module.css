@@ -1,0 +1,74 @@
+.LetterContainer {
+  max-width: 1800px;
+  height: 600px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.Container {
+  width: 80%;
+  min-height: 100px;
+  margin: 0 auto;
+  padding: 30px 0;
+}
+
+.form-Container {
+  width: 80%;
+  margin: auto;
+  border: 2px solid grey;
+  border-radius: 5px;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.Subject, .Letter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.Subject input, .Subject textarea, .Letter input, .Letter textarea {
+  width: 100%;
+  height: 40px;
+  border: none;
+  margin: 0 auto;
+  padding: 13px 10px;
+}
+.Subject input, .Letter input {
+  border-bottom: 1px solid grey;
+}
+.Subject textarea, .Letter textarea {
+  height: 300px;
+}
+
+.form-button-Container {
+  width: 80%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.Submit-Letter {
+  width: 80%;
+  height: 40px;
+  margin: 30px auto;
+}

@@ -1,0 +1,26 @@
+type Cart{
+    User: User!
+    Product: Product!
+    Quantity: Int!
+    Status: String!
+}
+
+extend type Mutation{
+    CreateNewCart(user_id: String!, product_id: String!, quantity: Int!): Cart!
+
+    DeleteCart(user_id: String!,product_id: String!): Cart!
+    CheckoutCart(user_id: String!): Cart!
+
+    SaveCart(user_id: String!,product_id: String!): Cart!
+    UnSaveCart(user_id: String!,product_id: String!): Cart!
+
+    IncrementCart(user_id: String!,product_id: String!): Cart!
+    DecrementCart(user_id: String!,product_id: String!): Cart!
+}
+
+
+extend type Query{
+    GetUserCart(user_id:String!): [Cart!]
+    GetUserSaveCart(user_id: String!): [Cart!]
+    GetUserNoSaveCart(user_id: String!): [Cart!]
+}

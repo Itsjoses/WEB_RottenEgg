@@ -1,0 +1,222 @@
+.body-Container-Full {
+  min-height: 90vh;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.body-Container {
+  min-height: 90vh;
+  width: 1800px;
+}
+.body-Container .sidebar-Container {
+  width: 20%;
+  height: 90vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+.body-Container .right-Carousel-Container {
+  width: 80%;
+  height: 90vh;
+}
+.body-Container .right-Carousel-Container .button-Carousel-Container {
+  width: 100%;
+  height: 60%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 30px;
+}
+.body-Container .right-Carousel-Container .button-Carousel-Container .Carousel-Button {
+  outline: none;
+  border: none;
+  background: none;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  cursor: pointer;
+  position: relative;
+  z-index: 10;
+  opacity: 0.8;
+}
+.body-Container .right-Carousel-Container .button-Carousel-Container .Carousel-Button ::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  opacity: 0.4;
+  z-index: -1;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  border-radius: 20%;
+}
+.body-Container .right-Carousel-Container .button-Carousel-Container .Carousel-Button:hover {
+  opacity: 1;
+}
+.body-Container .right-Carousel-Container .button-Carousel-Container .Carousel-Button:hover ::after {
+  background-color: white;
+}
+.body-Container .right-Carousel-Container .button-Carousel-Container i {
+  font-size: 4rem;
+  padding: 1rem 1rem;
+}
+.body-Container .right-Carousel-Container .lower-Carousel-Container {
+  height: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.body-Container .right-Carousel-Container .lower-Carousel-Container .lower-Carousel {
+  width: 32%;
+  height: 80%;
+  background-color: white;
+  border-radius: 10px;
+  padding: 15px 20px 0 20px;
+}
+.body-Container .right-Carousel-Container .lower-Carousel-Container .lower-Carousel .lower-Carousel-Title {
+  height: 25%;
+}
+.body-Container .right-Carousel-Container .lower-Carousel-Container .lower-Carousel .lower-Carousel-Content {
+  height: 75%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.body-Container .right-Carousel-Container .lower-Carousel-Container .lower-Carousel .lower-Carousel-Content button {
+  margin-top: 0.5rem;
+  border-radius: 50px;
+  width: 60%;
+  height: 45px;
+  border: none;
+  background-color: #F06C00;
+  color: white;
+  cursor: pointer;
+}
+.body-Container .right-Carousel-Container .lower-Carousel-Container .lower-Carousel .lower-Carousel-Content p {
+  margin-top: 10px;
+  font-size: 1rem;
+}
+.body-Container .right-Carousel-Container .lower-Carousel-Container .lower-Carousel .lower-Carousel-Content a {
+  font-weight: bold;
+  color: #3A60C2;
+  text-decoration: none;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 1rem;
+}
+
+.body {
+  height: 90vh;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.sidebar::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  opacity: 0.8;
+  z-index: -1;
+  left: 0;
+  top: 0;
+}
+
+.sidebar {
+  width: 93%;
+  height: 100%;
+  padding: 10px 0;
+  display: block;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 10;
+  position: relative;
+}
+.sidebar li {
+  list-style: none;
+  display: block;
+}
+.sidebar a {
+  text-decoration: none;
+  display: block;
+  padding: 10px 15px;
+  word-wrap: break-word;
+  color: black;
+}
+.sidebar .navbarContent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.sidebar .navbarContent i {
+  width: 15%;
+}
+.sidebar .navbarContent .navbarTitle {
+  width: 85%;
+}
+
+.welcome {
+  color: #606060;
+  font-size: 1.1rem;
+}
+.welcome a {
+  color: #606060;
+}
+
+.welcome-button {
+  margin-top: 1.5rem;
+  font-size: 1.1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  width: 100%;
+  text-align: end;
+}
+.welcome-button a {
+  color: #3A60C2;
+  margin-left: 2rem;
+  text-decoration: none;
+}
+
+.Infinite-Scroll {
+  background-color: #F7F7F7;
+}

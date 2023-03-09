@@ -1,0 +1,43 @@
+.BodyContainer {
+  max-width: 1800px;
+}
+
+.Container {
+  width: 80%;
+  min-height: 300px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+.Container .Container-content {
+  width: 200px;
+  height: 200px;
+  border: 1px solid grey;
+}
+
+.Content-user .Content-Name {
+  padding: 10px 5px;
+}
+
+.Content-button {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 10%;
+}
+.Content-button button {
+  height: 30px;
+  width: 100px;
+  border: none;
+}
+
+.button-color-ban {
+  background-color: red;
+}
+
+.button-color-unban {
+  background-color: green;
+}

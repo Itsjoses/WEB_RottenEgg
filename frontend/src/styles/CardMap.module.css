@@ -1,0 +1,67 @@
+.Card-Top {
+  width: 100%;
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.Card-Top-Container {
+  width: 90%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: yellow;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.Card-Top-Right button {
+  margin: 0 20px;
+}
+
+.Card-Bottom {
+  min-height: 100px;
+}
+
+.Container {
+  width: 100%;
+  background-color: red;
+}
+
+.Card-Bottom-Left {
+  width: 30%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.Card-Bottom-Left img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 100%;
+}
+
+.Card-Bottom-Container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 90%;
+  margin: 0 auto;
+  padding: 1rem 0;
+}
+
+.Card-Bottom-Mid {
+  width: 50%;
+}
+
+.Card-Bottom-Right {
+  width: 20%;
+}

@@ -1,0 +1,15 @@
+type Shop {
+  id: ID!
+  ShopName: String!
+  ShopEmail: String!
+  ShopPassword: String! 
+  banned: String!
+  banner: String!
+  Product: [Product!]
+}
+
+extend type Query{
+    Shopget(id: String!): Shop!
+    CategoryGet(id: String!): [Product]!
+    ProductRecommended(id: String!): [Product]!
+}

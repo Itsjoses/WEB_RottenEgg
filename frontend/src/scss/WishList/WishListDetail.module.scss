@@ -1,0 +1,25 @@
+.fullcontainer{
+    width: 100vw;
+}
+
+.fullcontainer-half{
+    max-width: 1800px;
+    margin: 0 auto;
+
+}
+
+.content{
+    width: 100%;
+    min-height: 100px;
+    background-color: red;
+    display: flex;
+    .half-left{
+        width: 20%;
+        background-color: blue;
+    }
+    .half-right{
+        width: 80%;
+        background-color: pink;
+    }
+}
+

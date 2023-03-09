@@ -1,0 +1,141 @@
+.ProductCart-Container{
+    width: 100%;
+    
+    .ProductCart-Content{
+        width: 95%;
+        min-height: 300px;
+    background-color: red;
+    margin: 0 auto;
+    }
+}
+
+.ProductCart-Content{
+    display: flex;
+}
+
+.ProductCart-Content-Left{
+    display: flex;
+    width: 75%;
+    padding: 0 1rem;
+    background-color: white;
+    border-radius: 10px;
+    flex-direction: column;
+    .Content-Left-Left{
+        width: 20%;
+        img {
+            width: 100%;
+            object-fit: contain
+        };
+        padding: 0 1rem;
+    }
+    .Content-Left-Mid{
+        width: 40%;
+        padding: 0 1rem;
+    }
+    .Content-Left-Right{
+        display: flex;
+        justify-content: space-between;
+        width: 40%;
+        padding: 0 1rem;
+    }
+}
+
+.Content-Left-Right{
+    display: flex;
+}
+
+// ===
+
+.Content-Left-Right{
+    margin: .6rem 0;
+    .Content-Right-Bottom-Button{
+        width: 100%;
+        display: flex;
+        
+    }
+    .Content-Right-Bottom-Button-quntity{
+        button,input{
+            width: 30px;
+            height: 25px;
+        }
+    }
+
+    .Content-Right-Bottom-Button-cart{
+        width: 70%;
+        button{
+            width: 70%;
+            height: 25px;
+        }
+    }
+}
+
+
+
+// right
+.ProductCart-Content-Right{
+    display: flex;
+    justify-content: center;
+    width: 25%;
+    background-color: yellow;
+}
+
+.ProductCart-Content-Right-Content{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0;
+    
+}
+
+.Content-Right-Top{
+    font-size: 2rem;
+}
+
+.Content-Right-Mid{
+    padding: 1rem 0;
+    border-bottom: 1px solid grey;
+}
+
+.Content-Right-Button-Top{
+    display: flex;
+    justify-content: space-between;
+}
+
+.Content-Right-Button{
+    padding: 1rem 0;
+    .Content-Right-Button-Bottom{
+        margin: 1rem 0;
+        button{
+            width: 100%;
+
+        }
+    }
+}
+
+.ProductCart-Content-Left-Card{
+    display: flex;
+}
+.Button-Delete-Top{
+
+}
+
+.Button-Delete-Bottom{
+    display: flex;
+    align-items: center;
+    
+    button{
+        margin: 1rem auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 3rem;
+        height: 2rem;
+    }
+    i{
+        display: block;
+    }
+}
+
+.Container{
+    margin: 2rem 0;
+}

@@ -1,0 +1,166 @@
+.ProductCart-Container {
+  width: 100%;
+}
+.ProductCart-Container .ProductCart-Content {
+  width: 95%;
+  min-height: 300px;
+  background-color: red;
+  margin: 0 auto;
+}
+
+.ProductCart-Content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.ProductCart-Content-Left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 75%;
+  padding: 0 1rem;
+  background-color: white;
+  border-radius: 10px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.ProductCart-Content-Left .Content-Left-Left {
+  width: 20%;
+  padding: 0 1rem;
+}
+.ProductCart-Content-Left .Content-Left-Left img {
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.ProductCart-Content-Left .Content-Left-Mid {
+  width: 40%;
+  padding: 0 1rem;
+}
+.ProductCart-Content-Left .Content-Left-Right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 40%;
+  padding: 0 1rem;
+}
+
+.Content-Left-Right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.Content-Left-Right {
+  margin: 0.6rem 0;
+}
+.Content-Left-Right .Content-Right-Bottom-Button {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.Content-Left-Right .Content-Right-Bottom-Button-quntity button, .Content-Left-Right .Content-Right-Bottom-Button-quntity input {
+  width: 30px;
+  height: 25px;
+}
+.Content-Left-Right .Content-Right-Bottom-Button-cart {
+  width: 70%;
+}
+.Content-Left-Right .Content-Right-Bottom-Button-cart button {
+  width: 70%;
+  height: 25px;
+}
+
+.ProductCart-Content-Right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 25%;
+  background-color: yellow;
+}
+
+.ProductCart-Content-Right-Content {
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 1rem 0;
+}
+
+.Content-Right-Top {
+  font-size: 2rem;
+}
+
+.Content-Right-Mid {
+  padding: 1rem 0;
+  border-bottom: 1px solid grey;
+}
+
+.Content-Right-Button-Top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.Content-Right-Button {
+  padding: 1rem 0;
+}
+.Content-Right-Button .Content-Right-Button-Bottom {
+  margin: 1rem 0;
+}
+.Content-Right-Button .Content-Right-Button-Bottom button {
+  width: 100%;
+}
+
+.ProductCart-Content-Left-Card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.Button-Delete-Bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.Button-Delete-Bottom button {
+  margin: 1rem auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 3rem;
+  height: 2rem;
+}
+.Button-Delete-Bottom i {
+  display: block;
+}
+
+.Container {
+  margin: 2rem 0;
+}

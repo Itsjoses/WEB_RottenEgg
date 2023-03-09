@@ -1,0 +1,220 @@
+.SignIn {
+  width: 100vw;
+  min-height: 100vh;
+  line-height: 1.36;
+  color: #222;
+  font-family: Helvetica, Arial, sans-serif;
+  background-color: #f4f5f7;
+}
+
+.SignIn-Header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 25px;
+}
+.SignIn-Header img {
+  width: 130px;
+  height: auto;
+}
+
+.SignIn-Body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.SignIn-Body .SignIn-Box {
+  position: relative;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 320px;
+  min-height: 300px;
+}
+.SignIn-Body .SignIn-Title {
+  text-align: center;
+  margin: 0 0 15px;
+}
+.SignIn-Body .SignUp-note {
+  color: #606060;
+  font-size: 13px;
+}
+.SignIn-Body .SignUp-note a {
+  color: #cc4e00;
+}
+.SignIn-Body .SignIn-Form {
+  line-height: 1.36;
+}
+.SignIn-Body .SignIn-Email {
+  position: relative;
+  width: 100%;
+}
+.SignIn-Body .SignIn-Email label {
+  position: absolute;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  left: 0;
+  top: 0;
+  padding: 12px 15px;
+  height: 44px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  color: grey;
+}
+.SignIn-Body .SignIn-Email input {
+  border: 1px solid #d9d9d9;
+  border-radius: 3px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 13px;
+  height: 44px;
+  padding: 12px 15px;
+  width: 100%;
+}
+
+.form {
+  margin-top: 13px;
+}
+
+.SignInButton {
+  width: 100%;
+  height: 44px;
+  border: 1px solid #d60;
+  background-color: #f39834;
+  border-radius: 3px;
+}
+
+.SignInOneTime {
+  width: 100%;
+  height: 44px;
+  border-radius: 3px;
+  border: 1px solid #d9d9d9;
+  background-color: rgb(252, 252, 253);
+}
+
+.form-checkbox {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  cursor: pointer;
+  display: inline-block;
+  letter-spacing: normal;
+  padding: 6px 0 6px 28px;
+  position: relative;
+  vertical-align: middle;
+  width: 100%;
+}
+.form-checkbox input[type=checkbox] {
+  left: 0;
+  opacity: 1;
+  position: absolute;
+  z-index: 1;
+  top: 8.9px;
+}
+.form-checkbox .form-checkbox-menu {
+  display: block;
+  min-height: 16px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 14px;
+}
+
+.note {
+  width: 100%;
+  font-size: 13px;
+  margin-top: 13px;
+}
+.note a {
+  color: #606060;
+}
+
+.SignUp {
+  font-size: 15px;
+  text-align: center;
+}
+.SignUp a {
+  color: black;
+}
+
+.split-line::before {
+  content: "";
+  background: #ebebeb;
+  position: absolute;
+  overflow: hidden;
+  height: 1px;
+  left: 0;
+  right: 0;
+  top: 50%;
+  width: 100%;
+}
+
+.split-line {
+  margin: 30px 0 15px;
+  position: relative;
+  text-align: center;
+}
+.split-line span {
+  background: #f4f5f7;
+  color: #606060;
+  font-size: 13px;
+  padding: 0 20px;
+  z-index: 100;
+  position: relative;
+}
+
+.SignInGoogle {
+  width: 100%;
+  height: 44px;
+  border-radius: 3px;
+  border: 1px solid #d9d9d9;
+  background-color: rgb(252, 252, 253);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 8px 1em;
+  position: relative;
+}
+.SignInGoogle .image {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  left: 20px;
+}
+.SignInGoogle img {
+  width: 20px;
+  height: 20px;
+}
+
+.SignIn-Footer {
+  margin-top: 10vh;
+  bottom: 0;
+  width: 100vw;
+  text-align: center;
+}
+.SignIn-Footer a, .SignIn-Footer p {
+  color: #606060;
+  font-size: 12px;
+  margin: 10px 0;
+}
+
+.error-messages {
+  font-size: 0.7rem;
+  color: red;
+  text-align: end;
+}

@@ -1,0 +1,5 @@
+type TransactionDetail{
+    TransactionHeader: TransactionHeader!
+    Product: Product!
+    quantity: Int!
+}

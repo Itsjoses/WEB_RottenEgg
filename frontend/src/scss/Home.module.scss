@@ -1,0 +1,194 @@
+.body-Container-Full{
+    min-height: 90vh;
+    width: 100vw;
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+}
+
+.body-Container{
+    min-height: 90vh;
+    width: 1800px;
+    .sidebar-Container{
+        width: 20%;
+        height: 90vh;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .right-Carousel-Container{
+        width: 80%;
+        height: 90vh;
+
+        .button-Carousel-Container{
+            width: 100%;
+            height: 60%;
+            // background-color: blue;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 30px;
+            .Carousel-Button{
+                outline: none;
+                border: none;
+                background: none;
+                transition: .5s;
+                cursor: pointer;
+                position: relative;
+                z-index: 10;
+                opacity: 0.8;
+                ::after{
+                    content: '';
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    left: 0;
+                    top: 0;
+                    opacity: .4;
+                    z-index: -1;
+                    transition: .5s;
+                    border-radius: 20%;
+                }
+            }
+
+            .Carousel-Button:hover{
+                opacity: 1;
+                ::after{
+                    background-color: white;
+
+                }
+            }
+
+            i{
+                font-size: 4rem;
+                padding: 1rem 1rem;
+                
+            }
+
+
+        }
+
+        .lower-Carousel-Container{
+            height: 40%;
+            // background-color: blue;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            .lower-Carousel{
+                width: 32%;
+                height: 80%;
+                background-color: white;
+                border-radius: 10px;
+                padding: 15px 20px 0 20px ;
+                .lower-Carousel-Title{
+                    height: 25%;
+                }
+                .lower-Carousel-Content{
+                    height: 75%;
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    flex-direction: column;
+                    button{
+                        margin-top: .5rem;
+                        border-radius: 50px;
+                        width: 60%;
+                        height: 45px;
+                        border: none;
+                        background-color: #F06C00;
+                        color: white;
+                        cursor: pointer;
+                    }
+                    p{
+                        margin-top: 10px;
+                        font-size: 1rem;
+                    }
+                    a{
+                        font-weight: bold;
+                        color: #3A60C2;
+                        text-decoration: none;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                        font-size: 1rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.body{
+    height: 90vh;
+    width: 100%;
+    display: flex;
+}
+
+.sidebar::after{
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    opacity: 0.8;
+    z-index: -1;
+    left: 0;
+    top: 0;
+}
+
+.sidebar{
+    width: 93%;
+    height: 100%;
+    padding: 10px 0;
+    display: block;
+    align-items: center;
+    z-index: 10;
+    position: relative;
+    li{
+        list-style: none;
+        display: block;
+    }
+    a{
+        text-decoration: none;
+        display: block;
+        padding: 10px 15px;
+        word-wrap: break-word;  
+        color: black;      
+    }
+    .navbarContent{
+        display: flex;
+        align-items: center;
+        
+        
+        i{
+            width: 15%;
+        }
+        .navbarTitle{
+            width: 85%;
+        }
+    }
+
+}
+.welcome{
+    color: #606060;
+    font-size: 1.1rem;
+    a{
+        color: #606060;
+    }
+}
+.welcome-button{
+    margin-top: 1.5rem;
+    font-size: 1.1rem;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    text-align: end;
+    a{
+        color: #3A60C2;
+        margin-left: 2rem;
+        text-decoration: none;
+    }
+}
+
+.Infinite-Scroll{
+    background-color: #F7F7F7;
+}

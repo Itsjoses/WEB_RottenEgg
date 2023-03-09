@@ -1,0 +1,117 @@
+.CardContainer-full{
+    min-height: 300px;
+}
+.CardContainer{
+    display: grid;
+    width: 100%;
+    background-color: yellow;
+    grid-template-columns: repeat(2,49%);
+    column-gap: 2%;
+        padding-bottom: 2%;
+}
+
+.WishListCard{
+    padding: 1rem 0;
+    margin-top: 2%;
+}
+
+.WishListCard-Top{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2rem;
+    .WishListCard-Top-Name{
+        font-size: 0.6rem;
+    }
+    .WishListCard-Top-Button{
+        display: flex;
+        align-items: center;
+        button{
+            display: inline-block;
+            font-size: 0.8rem;
+            outline: none;
+            border: none;
+            background-color: transparent;
+            color: blue;
+        }
+        .line-vertical{
+            display: inline-block;
+            height: 0.5rem;
+            width: 1px;
+            margin: 0 1rem;
+            background-color: black;
+        }
+    }
+}
+
+.WishListCard{
+    height: 14rem;
+    border: 2px solid grey;
+}
+
+// modal
+.modal-container{
+    position: fixed;
+    width: 30rem;
+    height: 20rem;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    background-color: white;
+    border-radius: 20px;
+    z-index: 100;
+    padding: 2rem 0;
+}
+
+.modal-container-half{
+    width: 80%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.middle-top{
+    margin-top: 1rem;
+    input{
+        width: 100%;
+        height: 1.8rem;
+    }
+}
+
+.middle{
+    margin-top: 1rem;
+    button{
+        width: 5rem;
+        height: 2rem;
+        outline: none;
+        border: none;
+        margin-right: 1rem;
+    }
+}
+
+.bottom{
+    height: 3rem;
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    border-top: 1px solid grey;
+    margin-top: 2rem;
+    button{
+        width: 5rem;
+        height: 2rem;
+        background-color: orange;
+        outline: none;
+        border: 1px solid grey;
+    }
+}
+
+.Close{
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 1.5em;
+    button{
+        border: none;
+        outline: none;
+        background-color: white;
+    }
+}   
+

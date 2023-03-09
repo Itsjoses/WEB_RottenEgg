@@ -1,0 +1,11 @@
+type ReviewQueue{
+    Id: ID!
+    User: User!
+    Product: Product!
+    Quantity: Int!
+}
+
+
+extend type Mutation{
+    CreateNewQueue(id: String!): [ReviewQueue!]
+}

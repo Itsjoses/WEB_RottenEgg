@@ -1,0 +1,19 @@
+type Review{
+    Product: Product!
+    User: User!
+    Shop: Shop!
+    Note: String!
+    Star: Int!
+}
+
+input ReviewInput{
+    ProductId: String!
+    UserId: String!
+    ShopId: String!
+    Note: String!
+    Star: Int!
+}
+
+extend type Mutation{
+    CreateReview(input: ReviewInput!): Review!
+}

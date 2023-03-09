@@ -1,0 +1,40 @@
+.VoucherBody {
+  max-width: 1800px;
+  height: 500px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.VoucherBody-Container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.Voucher-Name, .Voucher-Dec-Price, .Voucher-Button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 20px 0;
+}
+.Voucher-Name input, .Voucher-Dec-Price input, .Voucher-Button input {
+  width: 60%;
+  height: 30px;
+  padding: 15px 15px;
+  border-radius: 50px;
+  outline: none;
+  border: 2px solid #d9d9d9;
+}
+.Voucher-Name button, .Voucher-Dec-Price button, .Voucher-Button button {
+  width: 30%;
+  height: 44px;
+  border: 1px solid #d60;
+  background-color: #f39834;
+  border-radius: 3px;
+}

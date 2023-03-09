@@ -1,0 +1,135 @@
+.Header-Container-full {
+  max-width: 1800px;
+  min-height: 100px;
+}
+
+.Header-Container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 90%;
+  margin: 0 auto;
+  padding: 10px 0;
+}
+
+.Shop-Avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  position: relative;
+  background-color: pink;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 1rem;
+}
+.Shop-Avatar img {
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.Header-Container-left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 50%;
+}
+.Header-Container-left .Shop-Detail {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.Header-Container-left .Shop-Detail ul {
+  list-style: none;
+}
+.Header-Container-left .Shop-Detail .Shop-head {
+  margin: 5px 0;
+}
+
+.Shop-detail {
+  font-size: 0.8rem;
+}
+.Shop-detail strong {
+  margin-right: 5px;
+}
+.Shop-detail ul {
+  text-decoration: none;
+  list-style: none;
+}
+.Shop-detail ul li {
+  text-decoration: none;
+  list-style: none;
+}
+
+.line-vertical {
+  display: inline-block;
+  margin: 0 10px;
+  width: 1px;
+  height: 10px;
+  border: 1px solid black;
+}
+
+.Data-Rating {
+  display: inline-block;
+  font-size: 0.9rem;
+}
+.Data-Rating span {
+  margin: 0 4px;
+}
+
+.star {
+  display: inline-block;
+}
+
+.Shop-btn {
+  margin-top: 5px;
+}
+
+.button {
+  height: 24px;
+  font-size: 11px;
+  padding: 0 12px;
+  margin-right: 8px;
+  border-radius: 30px;
+  border: none;
+  outline: none;
+}
+.button i {
+  margin-right: 10px;
+}
+
+.button-href {
+  height: 24px;
+  border: 1px solid grey;
+}
+
+.Header-Container-right {
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: end;
+}
+.Header-Container-right .searchbar {
+  width: 40%;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+.Header-Container-right .searchbar input {
+  width: 100%;
+  padding: 8px 15px;
+  border-radius: 20px;
+  border: 1px solid grey;
+  outline: none;
+  font-size: 10px;
+}

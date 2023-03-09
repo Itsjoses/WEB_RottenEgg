@@ -1,0 +1,40 @@
+.Full-Container {
+  width: 100vw;
+}
+.Full-Container .Half-Container {
+  max-width: 1800px;
+  min-height: 100px;
+  background-color: yellow;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.Left-Container {
+  width: 20%;
+  background-color: blue;
+  min-height: 100px;
+}
+
+.Right-Container {
+  width: 80%;
+  min-height: 100px;
+  background-color: pink;
+}
+
+.Left-Content {
+  width: 80%;
+  min-height: 100px;
+  background-color: aqua;
+}
+
+.Lists-Egg {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.Content-Box {
+  padding: 1rem 0;
+  border-bottom: 1px solid grey;
+}

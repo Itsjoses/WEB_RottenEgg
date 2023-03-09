@@ -1,0 +1,13 @@
+type Address{
+    Title: String!
+    address: String!
+    User: User!
+}
+
+extend type Mutation{
+    CreateNewAddress(Title: String!, address: String!, user_id: String!): Address!
+}
+
+extend type Query{
+    GetUserAddress(user_id: String!): [Address!]!
+}

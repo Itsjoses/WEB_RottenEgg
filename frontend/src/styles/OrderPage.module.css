@@ -1,0 +1,110 @@
+.body-container-setting {
+  width: 100vw;
+}
+.body-container-setting .body-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.container-setting-left {
+  width: 15%;
+  padding-right: 20px;
+  border-right: 1px solid #eee;
+}
+
+.container-setting-left-greeting {
+  font-weight: bold;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #f4f5f7;
+}
+.container-setting-left-greeting a {
+  text-decoration: none;
+  color: black;
+  font-size: 1.4rem;
+}
+
+.container-setting-right {
+  width: 85%;
+  margin-left: 20px;
+}
+.container-setting-right .container-setting-right-title {
+  margin-bottom: 20px;
+}
+
+.left-content-fontline li {
+  padding: 8px 36px 8px 0;
+}
+
+.container-setting-left-content {
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  font-size: 0.8rem;
+}
+.container-setting-left-content .container-setting-left-content-title {
+  padding-bottom: 7px;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+.container-setting-left-content .container-setting-left-content-body li {
+  list-style: none;
+}
+.container-setting-left-content .container-setting-left-content-body a {
+  color: black;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.container-setting-right-body {
+  width: 100%;
+}
+.container-setting-right-body table {
+  width: 100%;
+}
+.container-setting-right-body td {
+  border-bottom: 1px solid #f4f5f7;
+  padding: 10px 0;
+}
+
+.celltable {
+  width: 100%;
+  border-bottom: 1px solid red;
+}
+.celltable .celltable-left {
+  width: 30%;
+  vertical-align: top;
+}
+.celltable .celltable-right {
+  width: 70%;
+}
+.celltable .celltable-right .title-table {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.celltable .celltable-right .detail-table {
+  margin: 20px 0;
+}
+
+.container-setting-right-footer {
+  margin-top: 20px;
+}
+
+.container-setting-right-Top {
+  width: 100%;
+  min-height: 100px;
+  background-color: red;
+}
+
+.container-setting-right-Bottom {
+  width: 100%;
+  min-height: 100px;
+  background-color: blue;
+}

@@ -1,0 +1,27 @@
+
+type WishListDetail{
+    WishList: WishList!
+    Product: Product!
+}
+
+type Followed{
+  User: User!
+  WishList: WishList!
+}
+
+extend type Query{
+  GetWishListDetail(id: String!): WishList!
+  GetPublicWishListDetail(id: String!): WishList!
+  GetPublicWishList(id: String!): [WishList]!
+  GetFollowed(id: String!): User!
+}
+
+extend type Mutation {
+  createWishListDetail(WishListIDCheck: String!,ProductIDCheck: String!): WishListDetail!
+  createDuplicate(id: String!, name: String!, privacy: String!, user_id: String!): WishList!
+
+  createFollow(user_id: String!,wishlist_id: String!): Followed!
+
+  unfollow(user_id:String!, wishlist_is: String!): Followed!
+}
+
