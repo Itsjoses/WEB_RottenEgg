@@ -10,6 +10,7 @@ import (
 
 	"github.com/Itsjose.s/gqlgen-todos/graph/model"
 	"github.com/google/uuid"
+	"github.com/vektah/gqlparser/v2/gqlerror"
 )
 
 // CreateNewHeader is the resolver for the CreateNewHeader field.
@@ -35,23 +36,77 @@ func (r *mutationResolver) CreateNewHeader(ctx context.Context, userID string) (
 	return header, nil
 }
 
+// UpdateDone is the resolver for the UpdateDone field.
+func (r *mutationResolver) UpdateDone(ctx context.Context, userID string) (*model.TransactionHeader, error) {
+	r.DB.Where("user_id like ?", userID).Updates(model.TransactionHeader{
+		Status: "Done",
+	})
+	return nil, nil
+}
+
+// UpdateCancel is the resolver for the UpdateCancel field.
+func (r *mutationResolver) UpdateCancel(ctx context.Context, userID string) (*model.TransactionHeader, error) {
+	r.DB.Where("user_id like ?", userID).Updates(model.TransactionHeader{
+		Status: "Done",
+	})
+	return nil, nil
+}
+
+// PreviousData is the resolver for the PreviousData field.
+func (r *mutationResolver) PreviousData(ctx context.Context, id string, userID string) ([]*model.TransactionDetail, error) {
+	var productall []*model.TransactionDetail
+	r.DB.Where("transaction_header_id = ?", id).Find(&productall)
+	fmt.Println(productall)
+	for i := 0; i < len(productall); i++ {
+		var carts []*model.Cart
+		err := r.DB.Where("user_id like ? and product_id like ?", userID, productall[i].ProductId).Take(&carts).Error
+
+		if err == nil {
+			r.DB.Where("user_id like ? and product_id like ?", userID, productall[i].ProductId).Updates(model.Cart{
+				Quantity: productall[i].Quantity,
+			})
+		} else {
+			cart := &model.Cart{
+				UserId:    userID,
+				ProductId: productall[i].ProductId,
+				Quantity:  productall[i].Quantity,
+				Status:    "NoSave",
+			}
+			r.DB.Create(cart)
+		}
+	}
+	return productall, nil
+}
+
 // TransactionHeaderDone is the resolver for the TransactionHeaderDone field.
-func (r *queryResolver) TransactionHeaderDone(ctx context.Context, userID string) (*model.TransactionHeader, error) {
-	var transactionheader *model.TransactionHeader
-	r.DB.Where("user_id like ? and status like ?", userID, "Done").Take(&transactionheader)
+func (r *queryResolver) TransactionHeaderDone(ctx context.Context, userID string) ([]*model.TransactionHeader, error) {
+	var transactionheader []*model.TransactionHeader
+	err := r.DB.Where("user_id like ? and status like ?", userID, "Done").Find(&transactionheader).Error
+	fmt.Println(err)
+	if len(transactionheader) == 0 {
+		return nil, gqlerror.Errorf("data is already empty!")
+	}
 	return transactionheader, nil
 }
 
 // TransactionHeaderPending is the resolver for the TransactionHeaderPending field.
-func (r *queryResolver) TransactionHeaderPending(ctx context.Context, userID string) (*model.TransactionHeader, error) {
-	var transactionheader *model.TransactionHeader
-	r.DB.Where("user_id like ? and status like ?", userID, "Pending").Take(&transactionheader)
+func (r *queryResolver) TransactionHeaderPending(ctx context.Context, userID string) ([]*model.TransactionHeader, error) {
+	var transactionheader []*model.TransactionHeader
+	r.DB.Where("user_id like ? and status like ?", userID, "Pending").Find(&transactionheader)
+	if len(transactionheader) == 0 {
+		return nil, gqlerror.Errorf("data is already empty!")
+	}
 	return transactionheader, nil
 }
 
 // TransactionHeaderCancle is the resolver for the TransactionHeaderCancle field.
-func (r *queryResolver) TransactionHeaderCancle(ctx context.Context, userID string) (*model.TransactionHeader, error) {
-	panic(fmt.Errorf("not implemented: TransactionHeaderCancle - TransactionHeaderCancle"))
+func (r *queryResolver) TransactionHeaderCancle(ctx context.Context, userID string) ([]*model.TransactionHeader, error) {
+	var transactionheader []*model.TransactionHeader
+	r.DB.Where("user_id like ? and status like ?", userID, "Cancel").Find(&transactionheader)
+	if len(transactionheader) == 0 {
+		return nil, gqlerror.Errorf("data is already empty!")
+	}
+	return transactionheader, nil
 }
 
 // User is the resolver for the User field.

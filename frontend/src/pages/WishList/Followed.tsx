@@ -3,12 +3,14 @@ import styles from "@/styles/WishListFollowed.module.css"
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Link from "next/link";
+import CardWishList from "../GlobalComponent/CardWishListComponent";
 
 
 
 const Followed = () => {
     const [followed,setFollowed] = useState([])
     const [count,setcount] = useState(0)
+
     useEffect(() => {
         const getData = async () => {
             const profile = sessionStorage.getItem("ID");
@@ -34,8 +36,12 @@ const Followed = () => {
                   },
                 }
               );
-              setFollowed(GetCurrentWishList.data.data.GetFollowed.Followed);
-              console.log(GetCurrentWishList.data.data.GetFollowed.Followed);
+              
+              console.log(GetCurrentWishList.data.data.GetFollowed);
+              
+              if(GetCurrentWishList.data.data.GetFollowed.Followed != null){
+                setFollowed(GetCurrentWishList.data.data.GetFollowed.Followed);
+              }
             }
           };
           getData();
@@ -75,40 +81,50 @@ const Followed = () => {
 
     return ( 
         <WishListHome content={
-            <div className={styles["CardContainer-full"]}>
-        <div className={styles["CardContainer"]}>
-        {followed.map((e) => {
-          return (
-            <>
-            
-              <div className={styles["WishListCard"]}>
-                <div className={styles["WishListCard-Top"]}>
-                  <div className={styles["WishListCard-Top-Name"]}>
-                    <Link href={`/WishList/WishListDetail?value=${e.WishList.id}`}><h1>testing</h1></Link>
-                  </div>
-                  <div className={styles["WishListCard-Top-Button"]}>
-                    <button onClick={() => unfollow(e.WishList.id)} >Unfollow</button>
-                    {/* <div className={styles["line-vertical"]}></div>
-                    <button >Duplicate</button>
-                    <div className={styles["line-vertical"]}></div>
-                    <button >Settings</button> */}
-                  </div>
+          <div>
+            <div className={styles["body-Container"]}>
+                <div className={styles["half-Container"]}>
+                    <div className={styles["Bottom-half-Container"]}>
+                        <CardWishList type= "Followed" props={followed}/>
+                    </div>
                 </div>
-                
-                <div className={styles["WishListCard-Bottom"]}>
-                  
-                  <div className={styles["WishListCard-Bottom-Left"]}></div>
-                  <div className={styles["WishListCard-Bottom-Right"]}></div>
-                  
-                </div>
-                
-              </div>
-              
-            </>
-          );
-        })}
-      </div>
+            </div>
         </div>
+
+      //       <div className={styles["CardContainer-full"]}>
+      //   <div className={styles["CardContainer"]}>
+      //   {followed.map((e) => {
+      //     return (
+      //       <>
+            
+      //         <div className={styles["WishListCard"]}>
+      //           <div className={styles["WishListCard-Top"]}>
+      //             <div className={styles["WishListCard-Top-Name"]}>
+      //               <Link href={`/WishList/WishListDetail?value=${e.WishList.id}`}><h1>testing</h1></Link>
+      //             </div>
+      //             <div className={styles["WishListCard-Top-Button"]}>
+      //               <button onClick={() => unfollow(e.WishList.id)} >Unfollow</button>
+      //               {/* <div className={styles["line-vertical"]}></div>
+      //               <button >Duplicate</button>
+      //               <div className={styles["line-vertical"]}></div>
+      //               <button >Settings</button> */}
+      //             </div>
+      //           </div>
+                
+      //           <div className={styles["WishListCard-Bottom"]}>
+                  
+      //             <div className={styles["WishListCard-Bottom-Left"]}></div>
+      //             <div className={styles["WishListCard-Bottom-Right"]}></div>
+                  
+      //           </div>
+                
+      //         </div>
+              
+      //       </>
+      //     );
+      //   })}
+      // </div>
+      //   </div>
 
         }></WishListHome>
 

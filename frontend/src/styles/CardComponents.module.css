@@ -14,13 +14,13 @@
      -moz-column-gap: 20px;
           column-gap: 20px;
   padding: 20px 40px;
+  row-gap: 20px;
 }
 
 .CardComponents {
   height: 400px;
   width: 100%;
   border-radius: 10px;
-  padding: 15px 15px;
   background-color: white;
 }
 
@@ -38,8 +38,8 @@
 .ImageCardComponents-Container img {
   width: 100%;
   height: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .CardComponents-Detail {
@@ -47,29 +47,55 @@
   width: 100%;
 }
 .CardComponents-Detail .CardComponents-Detail-Title {
-  width: 100%;
-  overflow: hidden;
-  margin-bottom: 30px;
-  margin-top: 15px;
-  font-size: 2rem;
+  height: 30%;
+  max-width: 100%;
+  padding-top: 10px;
 }
 .CardComponents-Detail .CardComponents-Detail-Title .Title {
   text-decoration: none;
   color: black;
+  white-space: nowrap;
+}
+.CardComponents-Detail .CardComponents-Detail-Title .Title h3 {
+  font-size: 1rem;
+  background-color: red;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  white-space: normal;
+  white-space: normal;
 }
 .CardComponents-Detail .CardComponents-Detail-Detail {
-  font-size: 20px;
-}
-
-.CardComponents-Detail-Button {
-  height: 2rem;
+  height: 70%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: end;
 }
-.CardComponents-Detail-Button button {
+.CardComponents-Detail .CardComponents-Detail-Detail .Detail-Container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+.CardComponents-Detail .CardComponents-Detail-Detail .Detail-Container .CardComponents-Detail-Detail-Price {
+  width: 50%;
+  height: 100%;
+  background-color: red;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.CardComponents-Detail .CardComponents-Detail-Detail .Detail-Container .CardComponents-Detail-Button {
+  width: 50%;
+}
+.CardComponents-Detail .CardComponents-Detail-Detail .Detail-Container .CardComponents-Detail-Button button {
   padding: 0 1rem;
 }

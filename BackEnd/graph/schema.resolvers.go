@@ -104,6 +104,7 @@ func (r *mutationResolver) CreateProduct(ctx context.Context, input model.NewPro
 		ProductPrice:       input.ProductPrice,
 		ProductStock:       input.ProductStock,
 		CategoryID:         category1.ID,
+		ShopId:             input.ShopID,
 	}
 
 	r.DB.Create(product)
@@ -370,7 +371,7 @@ func (r *queryResolver) ProductDetail(ctx context.Context, id string) (*model.Pr
 // Followed is the resolver for the Followed field.
 func (r *userResolver) Followed(ctx context.Context, obj *model.User) ([]*model.Followed, error) {
 	var Followed []*model.Followed
-	return Followed, r.DB.Where("shop_id like ?", obj.ID).Find(&Followed).Error
+	return Followed, r.DB.Where("user_id like ?", obj.ID).Find(&Followed).Error
 }
 
 // User is the resolver for the User field.

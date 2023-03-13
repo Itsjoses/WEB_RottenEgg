@@ -136,13 +136,11 @@ const WishListHomePage = () => {
             </div>
           </div>
                 <div className={styles["body-top-Container"]}>
-                  <a href="#demo-modal">
                     <button className={styles["body-button"]} onClick={()=> showCreate()}>Create List</button>
-                  </a>
                   <button>Manage List</button>
                 </div>
                 <div className={styles["body-bottom-Container"]}>
-                  <CardWishList props={WishList} />
+                  <CardWishList props={WishList} type= "mylist"/>
                 </div>
             </div>
         }></WishListHome>

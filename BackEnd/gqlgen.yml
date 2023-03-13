@@ -93,6 +93,8 @@ models:
     fields:
       Product:
         resolver: true
+      Review:
+        resolver: true
   Review:
     fields:
       Product:
@@ -129,3 +131,13 @@ models:
     fields:
       User:
         resolver: true
+  BuildList:
+    fields:
+      User:
+        resolver: true
+  BuildListDetail:
+    fields:
+      BuildList:
+        resolver: true
+      Product:
+        resolver: true  

@@ -18,4 +18,6 @@ func MigrateSeed() {
 	db.AutoMigrate(&model.TransactionHeader{})
 	db.AutoMigrate(&model.TransactionDetail{})
 	db.AutoMigrate(&model.Address{})
+	db.AutoMigrate(&model.BuildListDetail{})
+	db.AutoMigrate(&model.BuildList{})
 }

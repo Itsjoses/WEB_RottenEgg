@@ -1,13 +1,75 @@
 import WishListHome from "./WishListHome";
 import styles from "@/styles/WishListPublic.module.css";
 import RightCard from "../GlobalComponent/RightCardWishList";
+import { useEffect, useState } from "react";
+import CardWishList from "../GlobalComponent/CardWishListComponent";
+import axios from "axios";
 
 const WishListPublic = () => {
+    const [wishlist,setwishlist] = useState([])
+    useEffect(() =>{
+        const getData = async () => {
+            const profile = sessionStorage.getItem("ID");
+            if (profile != null) {
+              const PublicWishList = await axios.post("http://localhost:8080/query", {
+                query: `
+                      query getPublic($id: String!){
+                          GetPublicWishList(id: $id){
+                            id
+                            Name
+                            Privacy
+                            WishListDetails{
+                                    Product{
+                                ProductName
+                                ProductImage
+                              }
+                            }
+                            User{
+                                    first_name
+                            }
+                            }
+                        }
+                          `,
+                variables: {
+                  id: profile,
+                },
+              });
+              setwishlist(PublicWishList.data.data.GetPublicWishList);
+            }
+          };
+          getData();
+    },[])
   return (
     <WishListHome
       content={
         <div>
-          <div className={styles["Full-Container"]}>
+            <div className={styles["body-Container"]}>
+                <div className={styles["half-Container"]}>
+                    <div className={styles["Top-half-Container"]}>
+                        <div className={styles["Top-half-Container"]}>
+                            WishListPublic
+                        </div>
+                        <div className={styles["Top-half-Container"]}>
+                            <div className={styles["Top-half-Container-Left"]}>
+                                <select name="" id="">
+                                    <option value="">15</option>
+                                    <option value="">30</option>
+                                    <option value="">60</option>
+                                    <option value="">90</option>
+                                </select>
+                            </div>
+                            <div className={styles["Top-half-Container-Right"]}>
+                                <button>Prev</button>
+                                <button>Next</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div className={styles["Bottom-half-Container"]}>
+                        <CardWishList type= "Public" props={wishlist}/>
+                    </div>
+                </div>
+            </div>
+          {/* <div className={styles["Full-Container"]}>
             <div className={styles["Half-Container"]}>
               <div className={styles["Left-Container"]}>
                 <div className={styles["Left-Content"]}>
@@ -134,7 +196,7 @@ const WishListPublic = () => {
                 <RightCard/>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       }
     ></WishListHome>

@@ -1,0 +1,250 @@
+.Container {
+  max-width: 1800px;
+  margin: 0 auto;
+}
+
+.Choose-PC {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-top: 2rem;
+}
+.Choose-PC .Choose-PC-Left {
+  width: 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.Choose-PC .Choose-PC-Left .Choose-PC-Left-Container {
+  width: 80%;
+  border-right: 1px solid black;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.Choose-PC .Choose-PC-Right {
+  width: 80%;
+}
+
+.Choose-PC-Top {
+  min-height: 25rem;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.PC-card {
+  width: 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 1rem;
+  height: 20rem;
+  margin: 0 1rem;
+  border: 1px solid #000000;
+  border-radius: 5px;
+}
+
+.PC-card-image {
+  height: 70%;
+}
+.PC-card-image img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.PC-card-detail {
+  height: 30%;
+}
+.PC-card-detail .PC-card-detail-title {
+  color: #cc4b00;
+  font-weight: bold;
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+}
+.PC-card-detail .PC-card-detail-subtitle {
+  font-size: 0.9rem;
+}
+
+.Left-Container-Top {
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 1rem 0;
+  border-bottom: 1px solid black;
+}
+.Left-Container-Top h1 {
+  font-size: 1rem;
+}
+
+.Left-Container-Bottom {
+  width: 80%;
+}
+
+.Container-Bottom-Top {
+  width: 100%;
+  padding: 1rem 0;
+}
+.Container-Bottom-Top h1 {
+  font-size: 1rem;
+}
+
+.List-Card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border: solid #CCCCCC 1px;
+  padding: 0.5rem;
+  border-radius: 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.List-Card .List-Card-Title {
+  font-size: 0.6rem;
+}
+
+.List-Card-Button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+}
+.List-Card-Button button {
+  margin: 0 0.3rem;
+  padding: 0.3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.List-Card-Button button i {
+  font-size: 0.6rem;
+}
+
+.Choose-PC-Bottom {
+  width: 100%;
+}
+
+.Choose-PC-Bottom-Top, .Choose-PC-Bottom-Mid {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.List-Card {
+  margin: 1rem 0;
+}
+
+.modal-container {
+  position: fixed;
+  width: 30rem;
+  height: 20rem;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  background-color: white;
+  border-radius: 20px;
+  z-index: 100;
+  padding: 2rem 0;
+}
+
+.modal-container-half {
+  width: 80%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.middle-top {
+  margin-top: 1rem;
+}
+.middle-top input {
+  width: 100%;
+  height: 1.8rem;
+}
+
+.middle {
+  margin-top: 1rem;
+}
+.middle button {
+  width: 5rem;
+  height: 2rem;
+  outline: none;
+  border: none;
+  margin-right: 1rem;
+}
+
+.bottom {
+  height: 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: end;
+  border-top: 1px solid grey;
+  margin-top: 2rem;
+}
+.bottom button {
+  width: 5rem;
+  height: 2rem;
+  background-color: orange;
+  outline: none;
+  border: 1px solid grey;
+}
+
+.Close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 1.5em;
+}
+.Close button {
+  border: none;
+  outline: none;
+  background-color: white;
+}
+
+.Close button:focus .modal-container {
+  display: none;
+}

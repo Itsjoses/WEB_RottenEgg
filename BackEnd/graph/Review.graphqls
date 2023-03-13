@@ -1,8 +1,11 @@
 type Review{
+    id: ID!
     Product: Product!
     User: User!
     Shop: Shop!
-    Note: String!
+    Pros: String!
+    Cons: String!
+    Overall: String!
     Star: Int!
 }
 
@@ -10,10 +13,18 @@ input ReviewInput{
     ProductId: String!
     UserId: String!
     ShopId: String!
-    Note: String!
+    Pros: String!
+    Cons: String!
+    Overall: String!
     Star: Int!
 }
 
 extend type Mutation{
+    UpdateReview(id: String!,Pros: String!,Cons: String!,Overall: String!,Star: Int!): Review!
     CreateReview(input: ReviewInput!): Review!
+    DeleteReview(id: String!): Review!
+}
+
+extend type Query{
+    GetReview(user_id: String!): [Review!]
 }

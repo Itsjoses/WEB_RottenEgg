@@ -2,6 +2,7 @@ import ShopLayout from "./ShopLayout";
 import styles from "@/styles/ShopHome.module.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import ProductComponent from "../GlobalComponent/ProducComponent";
 const ShopHome = () => {
   // get about shop
   let [banner,setbanner] = useState("")
@@ -34,7 +35,6 @@ const ShopHome = () => {
             },
           }
         )
-          setshopdetail(GetCurrentWishList.data.data.Shopget.Product)
           setbanner(GetCurrentWishList.data.data.Shopget.banner)
           
     };
@@ -182,7 +182,8 @@ useEffect(() => {
           </div>
 
           <div className={styles["Product-container"]}>
-            <div className={styles["Product-container-container"]}>
+            <ProductComponent type={"Shop"}/>
+            {/* <div className={styles["Product-container-container"]}>
               <h1>Product</h1>
               <div className={styles["Product-container-subcontainer"]}>
 
@@ -434,7 +435,7 @@ useEffect(() => {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       }

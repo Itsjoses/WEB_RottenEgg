@@ -6,6 +6,8 @@ import axios from "axios";
 
 const ShopProduct = () => {
     const [ShopDetail,setshopdetail] = useState([])
+    const [product,setproduct] = useState([])
+    const [search,setsearch] = useState("")
     useEffect(() => {
       const getDataShop = async () => {
           const GetCurrentWishList = await axios.post(
@@ -36,6 +38,10 @@ const ShopProduct = () => {
       };
       getDataShop();
     }, []);
+
+    useEffect(() =>{
+        setproduct(ShopDetail.filter((e) => (e.ProductName).includes(search)))
+    },[search])
     //=====
     return <ShopLayout context={
         <div>
@@ -266,8 +272,8 @@ const ShopProduct = () => {
                 <div className={styles["Product-container-all"]}>
                     <div className={styles["Container-Category-List-Search"]}>
                     <div className={styles["Container-Category-List-Search-Left"]}>
-                        <div className={styles["Search-Left"]}>
-                            <input type="text" placeholder="Search Within"/>
+                        <div className={styles["Search-Left"]}> 
+                            <input type="text" placeholder="Search Within" onChange={(e) => setsearch(e.target.value)}/>
                             <button type="submit" className={styles["Search-Button"]}>
                                 <i className="fa fa-search"></i>
                             </button>
@@ -306,7 +312,7 @@ const ShopProduct = () => {
                     </div>
                     </div>
                   <div className={styles["Container-Category-List-product"]}>
-                    {ShopDetail.map(e => {
+                    {product.map(e => {
                         return(
 <>
 <div className={styles["Container-Category-List-item-product"]}>

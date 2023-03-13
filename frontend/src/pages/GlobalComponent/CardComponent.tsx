@@ -9,7 +9,7 @@ const CardComponent = ({ props }: { props: any[] }) => {
         <div className={styles["ProductCard-Container-inner"]}>
           <div className={styles["cardComponents-container"]}>
             {props.map((e) => {
-              console.log(e)
+              // console.log(e)
               return (
                 <>
                   <div className={styles["CardComponents"]}>
@@ -20,14 +20,22 @@ const CardComponent = ({ props }: { props: any[] }) => {
                     <div className={styles["CardComponents-Detail"]}>
                         <div className={styles["CardComponents-Detail-Title"]}>
                           <Link href={`/Product/ProductDetail?value=${e.id}`} className={styles["Title"]}>
-                          {e.ProductName}
+                          <h3>{e.ProductName}</h3>
                           </Link>
                           
                           </div>
-                        <div className={styles["CardComponents-Detail-Detail"]}>${e.ProductPrice}</div>
-                        <div className={styles["CardComponents-Detail-Button"]}>
-                          <button>ADD TO CART</button>
+                        <div className={styles["CardComponents-Detail-Detail"]}>
+                        <div className={styles["Detail-Container"]}>
+                        <div className={styles["CardComponents-Detail-Detail-Price"]}>
+                          <h3>${e.ProductPrice}</h3>
+                          </div>
+                          <div className={styles["CardComponents-Detail-Button"]}>
+                              <button>ADD TO CART</button>
+                          </div>
                         </div>
+                          
+                        </div>
+                        
                     </div>
                     
                   </div>

@@ -1,0 +1,19 @@
+type BuildList{
+    id: ID!,
+    User: User!,
+    BuildName: String!
+    # BuildListDetail: [BuildListDetail!]
+}
+
+extend type Mutation{
+    CreateBuildList(user_id: String!,name: String!): BuildList!
+    UpdateBuildList(id:String!,name:String!): BuildList!
+    DeleteBuildList(id:String!): BuildList!
+}
+
+extend type Query{
+    GetAllBuildList(user_id: String!): [BuildList]!
+    getAllProductSelected(type: String!,section:String!): [Product]!
+}
+
+

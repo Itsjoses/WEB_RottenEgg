@@ -5,7 +5,7 @@
     display: grid;
     width: 100%;
     background-color: yellow;
-    grid-template-columns: repeat(2,49%);
+    // grid-template-columns: repeat(2,49%);
     column-gap: 2%;
         padding-bottom: 2%;
 }
@@ -115,3 +115,24 @@
     }
 }   
 
+
+
+// detailcard
+.DetailCard{
+    box-sizing: border-box;
+    border: 1px solid grey;
+    padding: 1rem;
+    display: flex;
+}
+.DetailCard-Top{
+    width: 30%;
+    display: flex;
+    align-items: center;
+    img{
+        width: 100%;
+    }
+}
+
+.DetailCard-Bottom{
+    width: 70%;
+}

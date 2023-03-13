@@ -88,6 +88,7 @@ input NewProduct{
   ProductDescription: String!
   ProductPrice: Int!
   ProductStock: Int!
+  ShopId: String!
 }
 
 

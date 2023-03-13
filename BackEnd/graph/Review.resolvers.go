@@ -9,17 +9,47 @@ import (
 	"fmt"
 
 	"github.com/Itsjose.s/gqlgen-todos/graph/model"
+	"github.com/google/uuid"
 )
+
+// UpdateReview is the resolver for the UpdateReview field.
+func (r *mutationResolver) UpdateReview(ctx context.Context, id string, pros string, cons string, overall string, star int) (*model.Review, error) {
+	r.DB.Where("id like ?", id).Updates(model.Review{
+		Pros:    pros,
+		Cons:    cons,
+		Overall: overall,
+		Star:    star,
+	})
+	return nil, nil
+}
 
 // CreateReview is the resolver for the CreateReview field.
 func (r *mutationResolver) CreateReview(ctx context.Context, input model.ReviewInput) (*model.Review, error) {
 	review := &model.Review{
+		ID:        uuid.NewString(),
 		ProductId: input.ProductID,
 		UserId:    input.UserID,
 		ShopId:    input.ShopID,
-		Note:      input.Note,
+		Pros:      input.Pros,
+		Cons:      input.Cons,
+		Overall:   input.Overall,
+		Star:      input.Star,
 	}
 	r.DB.Create(review)
+	return review, nil
+}
+
+// DeleteReview is the resolver for the DeleteReview field.
+func (r *mutationResolver) DeleteReview(ctx context.Context, id string) (*model.Review, error) {
+	var review *model.Review
+	r.DB.Where("id like ?", id).Delete(&review)
+	return nil, nil
+}
+
+// GetReview is the resolver for the GetReview field.
+func (r *queryResolver) GetReview(ctx context.Context, userID string) ([]*model.Review, error) {
+	var review []*model.Review
+	r.DB.Where("user_id like ?", userID).Find(&review)
 	return review, nil
 }
 
@@ -41,12 +71,17 @@ func (r *reviewResolver) Shop(ctx context.Context, obj *model.Review) (*model.Sh
 	return shop, r.DB.Where("id like ?", obj.ShopId).Take(&shop).Error
 }
 
-// Star is the resolver for the Star field.
-func (r *reviewResolver) Star(ctx context.Context, obj *model.Review) (int, error) {
-	panic(fmt.Errorf("not implemented: Star - Star"))
-}
-
 // Review returns ReviewResolver implementation.
 func (r *Resolver) Review() ReviewResolver { return &reviewResolver{r} }
 
 type reviewResolver struct{ *Resolver }
+
+// !!! WARNING !!!
+// The code below was going to be deleted when updating resolvers. It has been copied here so you have
+// one last chance to move it out of harms way if you want. There are two reasons this happens:
+//   - When renaming or deleting a resolver the old code will be put in here. You can safely delete
+//     it when you're done.
+//   - You have helper methods in this file. Move them out to keep these resolver files clean.
+func (r *reviewResolver) Star(ctx context.Context, obj *model.Review) (int, error) {
+	panic(fmt.Errorf("not implemented: Star - Star"))
+}

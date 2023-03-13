@@ -2,15 +2,57 @@ import Header from "../Utilites/Header";
 import Footer from "../Utilites/Footer";
 import styles from "@/styles/OrderPage.module.css"
 import { THEME, ThemeContext } from "Context/Theme";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import CardMap from "../GlobalComponent/CardMap";
-
+import { Reload } from "Context/Reload";
+import { ReloadContext } from "Context/Reload";
 const Setting = () => {
+    const [typedata, settype] = useState("")
     const [email,setemail] = useState();
     const [first_name,setfirstname] = useState();
     const [last_name,setlastname] = useState();
     const [phone_number,setphonenumber] = useState();
+    const [transaction,setTransaction] = useState([])
+    useEffect(() => {
+        const profile = sessionStorage.getItem("ID")
+        const getData = async () => {
+            const GetCurrentUser = await axios.post(
+                "http://localhost:8080/query",
+                {
+                  query: `
+                  query getPending($user_id: String!){
+                    TransactionHeaderPending(user_id: $user_id){
+                      id
+                      User {
+                        id
+                        first_name
+                      }
+                      Status
+                      TransactionDetail{
+                              Product{
+                                ProductName
+                                ProductImage
+                                ProductPrice
+                        }	
+                        quantity
+                      }
+                    }
+                  }
+                  `,
+                  variables:{
+                    user_id: profile
+                  }
+                }
+              ) 
+              setTransaction(GetCurrentUser.data.data.TransactionHeaderPending)
+              console.log(GetCurrentUser.data.data.TransactionHeaderPending);
+              
+        }
+        getData();
+
+    },[])
+
     useEffect(() => {
             const getData = async () => {
                 const profile = sessionStorage.getItem("ID")
@@ -34,7 +76,6 @@ const Setting = () => {
                       }
                     }
                   ) 
-                  console.log(GetCurrentUser.data.data.GetUser.email)
                   setemail(GetCurrentUser.data.data.GetUser.email)
                   setphonenumber(GetCurrentUser.data.data.GetUser.phone_number)
                   setfirstname(GetCurrentUser.data.data.GetUser.first_name)
@@ -42,7 +83,8 @@ const Setting = () => {
                 }
         }
         getData();
-    })
+        settype("Pending")
+    },[])
     const [theme,setTheme] = useState(THEME.light)
 
     const handleTheme = () => {
@@ -54,7 +96,131 @@ const Setting = () => {
               sessionStorage.setItem("theme","light")
           }
         }
-      
+       
+    const Finalize = async ()=>{
+        const profile = sessionStorage.getItem("ID")
+        settype("Pending")
+
+        const GetCurrentUser = await axios.post(
+            "http://localhost:8080/query",
+            {
+              query: `
+              query getPending($user_id: String!){
+                TransactionHeaderPending(user_id: $user_id){
+                  id
+                  User {
+                    id
+                    first_name
+                  }
+                  Status
+                  TransactionDetail{
+                          Product{
+                              ProductName
+                      ProductImage
+                      ProductPrice
+                    }	
+                    quantity
+                  }
+                }
+              }
+              `,
+              variables:{
+                user_id: profile
+              }
+            }
+          ) 
+          if(GetCurrentUser.data.errors != null){
+            console.log("asd");
+            
+              setTransaction([])
+          }else{
+              setTransaction(GetCurrentUser.data.data.TransactionHeaderPending)
+          }
+    }    
+
+    const Done = async()=>{
+        const profile = sessionStorage.getItem("ID")
+        settype("Done")
+        const GetCurrentUser = await axios.post(
+            "http://localhost:8080/query",
+            {
+              query: `
+              query getPending($user_id: String!){
+                TransactionHeaderDone(user_id: $user_id){
+                  id
+                  User {
+                    id
+                    first_name
+                  }
+                  Status
+                  TransactionDetail{
+                          Product{
+                              ProductName
+                      ProductImage
+                      ProductPrice
+                    }	
+                    quantity
+                  }
+                }
+              }
+              `,
+              variables:{
+                user_id: profile
+              }
+            }
+          ) 
+        console.log(GetCurrentUser.data);
+        
+        if(GetCurrentUser.data.errors != null){
+          console.log("asd");
+            setTransaction([])
+        }else{
+            setTransaction(GetCurrentUser.data.data.TransactionHeaderDone)
+        }
+          
+    } 
+
+    const Cancel = async()=>{
+        const profile = sessionStorage.getItem("ID")
+        settype("Cancel")
+        const GetCurrentUser = await axios.post(
+            "http://localhost:8080/query",
+            {
+              query: `
+              query getPending($user_id: String!){
+                TransactionHeaderCancle(user_id: $user_id){
+                  id
+                  User {
+                    id
+                    first_name
+                  }
+                  Status
+                  TransactionDetail{
+                          Product{
+                              ProductName
+                      ProductImage
+                      ProductPrice
+                    }	
+                    quantity
+                  }
+                }
+              }
+              `,
+              variables:{
+                user_id: profile
+              }
+            }
+          ) 
+          if(GetCurrentUser.data.errors != null){
+            console.log("asd");
+            
+              setTransaction([])
+          }else{
+              setTransaction(GetCurrentUser.data.data.TransactionHeaderCancle)
+          }
+          
+    } 
+
     return ( 
         
         <>
@@ -112,8 +278,18 @@ const Setting = () => {
                     </div>    
                 </div>   
                 <div className={styles["container-setting-right"]}>
-                        <CardMap data2 = "Pending"/>
-                        <CardMap data2 = "Done"/>
+                    <div className={styles["container-setting-right-top"]}>
+                        <button onClick={() => Finalize()}>Pending Order</button>
+                        <button onClick={() => Done()}>Done Order</button>
+                        <button onClick={() => Cancel()}>Cancel Order</button>
+                    </div>
+                    <div className={styles["container-setting-right-bottom"]}>
+                      {/* {console.log(transaction.length)} */}
+                      {(transaction.length !== 0) ? <CardMap data2 = {typedata} fst2 = {transaction}/> : <>Tidak ada Data</>}
+                        
+                        {/* <CardMap data2 = "Done"/> */}
+                    </div>
+                        
                 </div>     
             </div>
         </div>

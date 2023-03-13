@@ -36,6 +36,7 @@ const InsertProduct = () => {
     
 
     const InsertNewProduct = async () => {
+      const ShopId = sessionStorage.getItem("ID")
         console.log(Name)
         console.log(Category)
         console.log(Images)
@@ -43,7 +44,7 @@ const InsertProduct = () => {
         console.log(Price)
         console.log(Stock)
 
-        const urlImage = `Product/1e3a9b6d-b4ff-4b6d-a92f-ab5f3a0260c8/${Images.name}`
+        const urlImage = `Product/${ShopId}/Images/${Images.name}`
         const imageRef = ref(storage, urlImage)
 
         await uploadBytes(imageRef,Images)
@@ -57,10 +58,10 @@ const InsertProduct = () => {
             "http://localhost:8080/query",
             {
               query: `
-              mutation createProuct($ProductName: String!,$ProductCategoryName: String!, $ProductImage: String!,
-                $ProductDescription: String!, $ProductPrice: Int!, $ProductStock: Int!){
+              mutation CreateProduct($ProductName: String!,$ProductCategoryName: String!, $ProductImage: String!,
+                $ProductDescription: String!, $ProductPrice: Int!, $ProductStock: Int!,$ShopId: String!){
 
-                CreateProduct(input:{ProductName:$ProductName,ProductCategoryName:$ProductCategoryName,ProductImage:$ProductImage,ProductDescription:$ProductDescription,ProductPrice: $ProductPrice,ProductStock: $ProductStock}){
+                CreateProduct(input:{ProductName:$ProductName,ProductCategoryName:$ProductCategoryName,ProductImage:$ProductImage,ProductDescription:$ProductDescription,ProductPrice: $ProductPrice,ProductStock: $ProductStock,ShopId: $ShopId}){
 
                   id
                   ProductName
@@ -80,12 +81,13 @@ const InsertProduct = () => {
                 ProductImage: url,
                 ProductDescription: Description,
                 ProductPrice: Price,
-                ProductStock: Stock
+                ProductStock: Stock,
+                ShopId: ShopId
               }
             }
         ) 
 
-        console.log("success");
+        alert("success");
         
     }
 
@@ -183,21 +185,18 @@ const InsertProduct = () => {
                       placeholder="Product Category"
                     //   onChange={(e) => setShopEmail(e.target.value)}
                     /> */}
-                        <input list="browsers" name="browser" id="browser" placeholder="Category" 
-                        onChange={(e) => setCategorySelect(e.target.value)}
-                        />
                         
                         
-                        <datalist id="browsers">
+                        <select id="browsers" onChange={(e) => setCategorySelect(e.target.value)}>
                           {AllCategory.map((e) => {
                                   return (  
                                     <>
-                                      <option value={e.CategoryName}></option>
+                                      <option value={e.CategoryName}>{e.CategoryName}</option>
                                     </>
                                     
                                   )
                               })}
-                        </datalist>
+                        </select>
                   </div>
                 </div> 
 

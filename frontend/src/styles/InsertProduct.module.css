@@ -69,7 +69,7 @@
   transition: 0.2s;
   color: grey;
 }
-.SignIn-Body .SignIn-Email input {
+.SignIn-Body .SignIn-Email input, .SignIn-Body .SignIn-Email select {
   border: 1px solid #d9d9d9;
   border-radius: 3px;
   -webkit-box-sizing: border-box;

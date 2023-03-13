@@ -96,7 +96,6 @@ func (r *mutationResolver) Unfollow(ctx context.Context, userID string, wishlist
 func (r *queryResolver) GetWishListDetail(ctx context.Context, id string) (*model.WishList, error) {
 	var wishlist *model.WishList
 	r.DB.Where("id like ?", id).Take(&wishlist)
-	r.DB.Delete(wishlist)
 	return wishlist, nil
 }
 

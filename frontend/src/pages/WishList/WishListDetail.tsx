@@ -3,6 +3,7 @@ import styles from "../../styles/WishListDetail.module.css";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import CardWishList from "../GlobalComponent/CardWishListComponent";
 
 const WishListDetail = () => {
     const router = useRouter();
@@ -58,9 +59,15 @@ const WishListDetail = () => {
           <div className={styles["fullcontainer-half"]}>
             <div className={styles["content"]}>
               <div className={styles["half-left"]}>
-
+                <div className={styles["half-left-top"]}>
+                
+                </div>
+                <div className={styles["half-left-bottom"]}>
+                
+                </div>
               </div>
               <div className={styles["half-right"]}>
+                <CardWishList props = {product} type= "Detail"/>
                 {product.map((e) =>{
                     return(
                         <>

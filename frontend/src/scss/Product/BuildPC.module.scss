@@ -1,0 +1,203 @@
+.Container{
+    max-width: 1800px;
+    margin: 0 auto;
+    
+}
+
+.Choose-PC{
+    width: 100%;
+    display: flex;
+    padding-top: 2rem;
+    .Choose-PC-Left{
+        width: 20%;  
+        display: flex;
+        .Choose-PC-Left-Container{
+            width: 80%;
+            border-right: 1px solid black;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+    .Choose-PC-Right{
+        width: 80%;
+    }
+}
+
+.Choose-PC-Top{
+    min-height: 25rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.PC-card{
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    height: 20rem;
+    margin: 0 1rem;
+    border: 1px solid #000000;
+    border-radius: 5px;
+}
+
+.PC-card-image{
+        height: 70%;
+        img{
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .PC-card-detail{
+        height: 30%; 
+        .PC-card-detail-title{
+            color: #cc4b00;
+            font-weight: bold;
+            margin: .5rem 0;
+            font-size: 1.1rem;
+        }
+        .PC-card-detail-subtitle{
+            font-size: .9rem;
+        }
+    }
+
+
+    // ==== left section
+    .Left-Container-Top{
+        width: 80%;
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem 0;
+        border-bottom: 1px solid black;
+        h1{
+            font-size: 1rem;
+        }
+    }
+    .Left-Container-Bottom{
+        width: 80%;
+    }
+
+    .Container-Bottom-Top{
+        width: 100%;
+        padding: 1rem 0;
+        h1{
+            font-size: 1rem;
+        }
+    }
+
+    .List-Card{
+        display: flex;
+        justify-content: space-between;
+        border: solid #CCCCCC 1px;
+        padding: .5rem;
+        border-radius: 10px;
+        align-items: center;
+        .List-Card-Title{
+            font-size: .6rem;
+        }
+    }
+
+    .List-Card-Button{
+        display: flex;
+        justify-content: end;
+            button{
+            margin: 0 .3rem;
+            padding: .3rem;
+            display: flex;
+            align-items: center;
+            i{
+                font-size: .6rem;
+            }
+        }
+    }
+
+
+.Choose-PC-Bottom{
+    width: 100%;
+}
+
+    // select item
+
+    .Choose-PC-Bottom-Top,.Choose-PC-Bottom-Mid{
+        display: flex;
+        justify-content: center;
+        
+    }
+.List-Card{
+    margin: 1rem 0;
+}
+// modal
+// modal
+.modal-container{
+    position: fixed;
+    width: 30rem;
+    height: 20rem;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    background-color: white;
+    border-radius: 20px;
+    z-index: 100;
+    padding: 2rem 0;
+}
+
+.modal-container-half{
+    width: 80%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.middle-top{
+    margin-top: 1rem;
+    input{
+        width: 100%;
+        height: 1.8rem;
+    }
+}
+
+.middle{
+    margin-top: 1rem;
+    button{
+        width: 5rem;
+        height: 2rem;
+        outline: none;
+        border: none;
+        margin-right: 1rem;
+    }
+}
+
+.bottom{
+    height: 3rem;
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    border-top: 1px solid grey;
+    margin-top: 2rem;
+    button{
+        width: 5rem;
+        height: 2rem;
+        background-color: orange;
+        outline: none;
+        border: 1px solid grey;
+    }
+}
+
+.Close{
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 1.5em;
+    button{
+        border: none;
+        outline: none;
+        background-color: white;
+    }
+}
+
+.Close button:focus .modal-container{
+    display: none;
+}

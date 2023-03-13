@@ -6,10 +6,12 @@ type Shop {
   banned: String!
   banner: String!
   Product: [Product!]
+  Review: [Review!]
 }
 
 extend type Query{
     Shopget(id: String!): Shop!
     CategoryGet(id: String!): [Product]!
     ProductRecommended(id: String!): [Product]!
+    LoginShop(ShopEmail: String!,ShopPassword:String!): Shop!
 }

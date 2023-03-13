@@ -1,11 +1,12 @@
 package model
 
 type Review struct {
+	ID        string `json:"id"`
 	ProductId string
 	UserId    string
 	ShopId    string
-	// Product *Product `json:"Product"`
-	// User    *User    `json:"User"`
-	// Shop    *Shop    `json:"Shop"`
-	Note string `json:"Note"`
+	Pros      string `json:"Pros"`
+	Cons      string `json:"Cons"`
+	Overall   string `json:"Overall"`
+	Star      int    `json:"Star"`
 }

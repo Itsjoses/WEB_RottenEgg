@@ -3,6 +3,7 @@ import styles from "../../styles/WishListHome.module.css";
 import { ReactNode, useEffect, useState } from "react";
 import axios from "axios";
 import CardWishList from "../GlobalComponent/CardWishListComponent";
+import Link from "next/link";
 
 interface LayoutProps{
   content: ReactNode
@@ -144,9 +145,16 @@ const WishListHome = (props: LayoutProps) => {
                 <h1>Wish list</h1>
               </div>
               <div>
+                <Link href={"/WishList/Home"}>
+
                 <button>My Lists</button>
+                </Link>
+                
                 <button>Followed Lists</button>
+                <Link href={"/WishList/WishListPublic"}>
+                  
                 <button>Public Lists</button>
+                </Link>
               </div>
             </div>
             {/* <div className={styles["body-Container"]}> */}

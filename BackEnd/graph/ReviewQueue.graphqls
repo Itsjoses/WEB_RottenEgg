@@ -7,5 +7,10 @@ type ReviewQueue{
 
 
 extend type Mutation{
-    CreateNewQueue(id: String!): [ReviewQueue!]
+    CreateNewQueue(id: String!,user_id: String!): [ReviewQueue!]
+    DoneQueue(id: String!): ReviewQueue!
+}
+
+extend type Query{
+    getQueue(user_id: String!): [ReviewQueue!]
 }

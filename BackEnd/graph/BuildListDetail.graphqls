@@ -1,0 +1,18 @@
+type BuildListDetail{
+    BuildList: BuildList!
+    Product: Product!
+    Quantity: Int!
+}
+
+
+extend type Mutation{
+    InsertItem(product_id: String!, BuildList_id: String!): BuildListDetail!
+    DeleteItem(BuildList_id: String!): BuildListDetail!
+    AddCart(BuildList_id: String!,user_id:String!): BuildListDetail!
+    UpdateQuantity(BuildList_id: String!,Quantity: Int!): BuildListDetail!
+}
+
+
+extend type Query{
+    GetAllItem(BuildList_id: String!): [BuildListDetail]!
+}

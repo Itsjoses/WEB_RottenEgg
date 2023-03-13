@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { THEME, ThemeContext } from "Context/Theme";
 import CardComponent from "./GlobalComponent/CardComponent";
+import { GetCurrentShop, GetCurrentUser } from "./Query/Header&Home/UserLogin";
 const Home = () => {    
     const [page,setPage] = useState(1)
     const [profile, setProfile] = useState<any>("")
@@ -16,24 +17,49 @@ const Home = () => {
     useEffect(() => {
         const getData = async () => {
           const profile = sessionStorage.getItem("ID")
+          const role = sessionStorage.getItem("Role")
           if(profile != null){
-            const GetCurrentUser = await axios.post(
-              "http://localhost:8080/query",
-              {
-                query: `
-                  query getCurrentUser($id: String!)
-                  {
-                    GetUser(id : $id){
-                      first_name
+            if(role == "User"){
+                const GetCurrentUser = await axios.post(
+                    "http://localhost:8080/query",
+                    {
+                      query: `
+                        query getCurrentUser($id: String!)
+                        {
+                          GetUser(id : $id){
+                            first_name
+                          }
+                        }
+                      `,
+                      variables:{
+                        id: profile
+                      }
+                    }
+                  ) 
+                  setProfile(GetCurrentUser.data.data.GetUser.first_name)
+            }else if(role == "Shop"){
+                const GetCurrentShop = await axios.post(
+                    "http://localhost:8080/query",
+                    {
+                      query: `
+                      query GetCurrentShop($id: String!){
+                        Shopget(id:$id){
+                          id
+                      ShopName
+                      ShopEmail
+                      ShopPassword
+                      
                     }
                   }
-                `,
-                variables:{
-                  id: profile
-                }
-              }
-            ) 
-            setProfile(GetCurrentUser.data.data.GetUser.first_name)
+                      `,
+                      variables:{
+                        id: profile
+                      }
+                    }
+                  ) 
+                  setProfile(GetCurrentShop.data.data.Shopget.ShopName)
+            }
+            
           }
         }
     
@@ -44,7 +70,7 @@ const Home = () => {
     useEffect(() => {
         const getProduct = async () => {
             
-            console.log(page)
+            // console.log(page)
             let pagecurr = page
             const GetCurrentUser = await axios.post(
               "http://localhost:8080/query",
@@ -85,7 +111,7 @@ const Home = () => {
       useEffect(() => {
         const getProduct = async () => {
             let pagetemp = page;
-            console.log(page)
+            // console.log(page)
             const GetCurrentUser = await axios.post(
               "http://localhost:8080/query",
               {

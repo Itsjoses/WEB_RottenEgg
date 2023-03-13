@@ -1,0 +1,69 @@
+.Container {
+  width: 100%;
+}
+
+.Card {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.Card-Left {
+  width: 70%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.Card-Right {
+  width: 30%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: end;
+}
+
+.Card {
+  padding: 0 1rem;
+  height: 8rem;
+  width: 90%;
+}
+
+.Card-Left-Title, .Card-Right-Price, .Card-Right-Button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.Card-Left-Image {
+  width: 30%;
+  background-color: yellow;
+}
+.Card-Left-Image img {
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  height: 100%;
+}
+
+.Card-Right-Price {
+  padding: 0.8rem 0;
+  font-size: 1.5rem;
+}
+
+.Card-Right-Button {
+  padding: 0.7rem;
+}

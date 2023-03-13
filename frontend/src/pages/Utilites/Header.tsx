@@ -4,12 +4,19 @@ import Link from "next/link";
 import { arch } from "os";
 import { useContext, useEffect, useState } from "react";
 import styles from "../../styles/Header.module.css";
+import { GetCurrentShop, GetCurrentUser } from "../Query/Header&Home/UserLogin";
 // interface Parameter{
 //   handleTheme: Function
 // }
 
 const Header = ({handleTheme}:{handleTheme:Function}) => {
+  const [latitude,setlatitude] = useState(0)
+  const [longtitued,setlongtitude] = useState(0)
   const [profile, setProfile] = useState("")
+  const [search,setsearch] = useState("")
+  useEffect(() =>{
+    sessionStorage.setItem("Search",search);
+  },[search])
   // const handleTheme = () => {
   //   if (theme == THEME.light) {
   //       setTheme(THEME.dark)
@@ -21,28 +28,74 @@ const Header = ({handleTheme}:{handleTheme:Function}) => {
   useEffect(() => {
     const getData = async () => {
       const profile = sessionStorage.getItem("ID")
+      const role = sessionStorage.getItem("Role")
       if(profile != null){
-        const GetCurrentUser = await axios.post(
-          "http://localhost:8080/query",
-          {
-            query: `
-              query getCurrentUser($id: String!)
-              {
-                GetUser(id : $id){
-                  first_name
+        if(role == "User"){
+            const GetCurrentUser = await axios.post(
+                "http://localhost:8080/query",
+                {
+                  query: `
+                    query getCurrentUser($id: String!)
+                    {
+                      GetUser(id : $id){
+                        first_name
+                      }
+                    }
+                  `,
+                  variables:{
+                    id: profile
+                  }
+                }
+              ) 
+              setProfile(GetCurrentUser.data.data.GetUser.first_name)
+        }else if(role == "Shop"){
+            const GetCurrentShop = await axios.post(
+                "http://localhost:8080/query",
+                {
+                  query: `
+                  query GetCurrentShop($id: String!){
+                    Shopget(id:$id){
+                      id
+                  ShopName
+                  ShopEmail
+                  ShopPassword
+                  
                 }
               }
-            `,
-            variables:{
-              id: profile
-            }
-          }
-        ) 
-        setProfile(GetCurrentUser.data.data.GetUser.first_name)
+                  `,
+                  variables:{
+                    id: profile
+                  }
+                }
+              ) 
+              setProfile(GetCurrentShop.data.data.Shopget.ShopName)
+        }
+        
       }
     }
+
     getData()
+    
   },[]);
+
+  useEffect(() =>{
+    function getLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+      } else {
+        console.log("Geolocation is not supported by this browser.");
+      }
+    }
+    
+    function showPosition(position: GeolocationPosition) {
+      const latitude = position.coords.latitude;
+      const longitude = position.coords.longitude;
+      console.log(`Latitude: ${latitude}, Longitude: ${longitude}`);
+      setlatitude(latitude);
+      setlongtitude(longitude)
+    }
+    getLocation();
+  },[])
   return (
     
     <header>
@@ -68,13 +121,14 @@ const Header = ({handleTheme}:{handleTheme:Function}) => {
                 <i className="fa-solid fa-location-dot"></i>
                   <div className={styles["Location-Title"]}>
                       <h2>Hello</h2>
-                      <h1>Select Address</h1>
+                      <h1>Longitude: {longtitued}</h1>
+                      <h1>Latitued: {latitude}</h1>
                   </div>
                 </a>
               </div>
 
               <div className={styles["Search"]}>
-                <input type="text" placeholder="Search.." name="search" className={styles["Seach-input"]}/>
+                <input type="text" placeholder="Search.." name="search" className={styles["Seach-input"]} onChange={(e) => setsearch(e.target.value)}/>
                 <button type="submit" className={styles["Search-Button"]}>
                   <i className="fa fa-search"></i>
                 </button>

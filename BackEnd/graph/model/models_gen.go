@@ -14,6 +14,7 @@ type NewProduct struct {
 	ProductDescription  string `json:"ProductDescription"`
 	ProductPrice        int    `json:"ProductPrice"`
 	ProductStock        int    `json:"ProductStock"`
+	ShopID              string `json:"ShopId"`
 }
 
 type NewShop struct {
@@ -39,7 +40,9 @@ type ReviewInput struct {
 	ProductID string `json:"ProductId"`
 	UserID    string `json:"UserId"`
 	ShopID    string `json:"ShopId"`
-	Note      string `json:"Note"`
+	Pros      string `json:"Pros"`
+	Cons      string `json:"Cons"`
+	Overall   string `json:"Overall"`
 	Star      int    `json:"Star"`
 }
 
@@ -51,6 +54,7 @@ type Shop struct {
 	Banned       string     `json:"banned"`
 	Banner       string     `json:"banner"`
 	Product      []*Product `json:"Product"`
+	Review       []*Review  `json:"Review"`
 }
 
 type User struct {

@@ -69,6 +69,7 @@ const SignIn = () => {
             else{
                 console.log(Userdata.data.data.Login.id)
                 sessionStorage.setItem("ID",Userdata.data.data.Login.id);
+                sessionStorage.setItem("Role","User");
                 alert(":V")
 
                 router.push("/Home")
@@ -112,7 +113,7 @@ const SignIn = () => {
             <div className={styles["SignIn-Body"]}>
                 <div className={styles["SignIn-Box"]}>
                     <div className={styles["SignIn-Title"]}>
-                            Sign in
+                            Shop Sign in
                     </div>
                     <div className={styles["SignIn-Form"]}>
                         <form action="" onSubmit={(e) => submit(e)}>

@@ -12,19 +12,33 @@ import (
 )
 
 // CreateNewQueue is the resolver for the CreateNewQueue field.
-func (r *mutationResolver) CreateNewQueue(ctx context.Context, id string) ([]*model.ReviewQueue, error) {
-	var carts []*model.Cart
-	r.DB.Where("user_id like ?", id).Find(&carts)
+func (r *mutationResolver) CreateNewQueue(ctx context.Context, id string, userID string) ([]*model.ReviewQueue, error) {
+	var carts []*model.TransactionDetail
+	r.DB.Where("transaction_header_id like ?", id).Find(&carts)
 	for i := 0; i < len(carts); i++ {
 		reviewQueue := &model.ReviewQueue{
 			ID:        uuid.NewString(),
-			UserId:    id,
+			UserId:    userID,
 			ProductId: carts[i].ProductId,
 			Quantity:  carts[i].Quantity,
 		}
 		r.DB.Create(reviewQueue)
 	}
 	return nil, nil
+}
+
+// DoneQueue is the resolver for the DoneQueue field.
+func (r *mutationResolver) DoneQueue(ctx context.Context, id string) (*model.ReviewQueue, error) {
+	var carts *model.ReviewQueue
+	r.DB.Where("id like ?", id).Take(&carts).Delete(&carts)
+	return nil, nil
+}
+
+// GetQueue is the resolver for the getQueue field.
+func (r *queryResolver) GetQueue(ctx context.Context, userID string) ([]*model.ReviewQueue, error) {
+	var carts []*model.ReviewQueue
+	r.DB.Where("user_id like ?", userID).Find(&carts)
+	return carts, nil
 }
 
 // User is the resolver for the User field.

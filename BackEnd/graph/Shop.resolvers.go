@@ -7,7 +7,10 @@ package graph
 import (
 	"context"
 
+	database "github.com/Itsjose.s/gqlgen-todos/Database"
 	"github.com/Itsjose.s/gqlgen-todos/graph/model"
+	"github.com/vektah/gqlparser/v2/gqlerror"
+	"gorm.io/gorm"
 )
 
 // Shopget is the resolver for the Shopget field.
@@ -40,10 +43,32 @@ func (r *queryResolver) ProductRecommended(ctx context.Context, id string) ([]*m
 	return product, nil
 }
 
+// LoginShop is the resolver for the LoginShop field.
+func (r *queryResolver) LoginShop(ctx context.Context, shopEmail string, shopPassword string) (*model.Shop, error) {
+	db := database.GetDB()
+	var shop model.Shop
+	emailerr := db.Model(shop).Where("shop_email LIKE ?", shopEmail).Take(&shop).Error
+	if emailerr != nil {
+		if emailerr == gorm.ErrRecordNotFound {
+			return nil, gqlerror.Errorf("the email is not found!")
+		}
+	}
+	if shopPassword == shop.ShopPassword {
+		return &shop, nil
+	}
+	return nil, gqlerror.Errorf("invalid password!")
+}
+
 // Product is the resolver for the Product field.
 func (r *shopResolver) Product(ctx context.Context, obj *model.Shop) ([]*model.Product, error) {
 	var Product []*model.Product
 	return Product, r.DB.Where("shop_id like ?", obj.ID).Find(&Product).Error
+}
+
+// Review is the resolver for the Review field.
+func (r *shopResolver) Review(ctx context.Context, obj *model.Shop) ([]*model.Review, error) {
+	var review []*model.Review
+	return review, r.DB.Where("shop_id like ?", obj.ID).Find(&review).Error
 }
 
 // Shop returns ShopResolver implementation.
